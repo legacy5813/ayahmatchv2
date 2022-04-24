@@ -3,6 +3,7 @@ import './App.css';
 import Menu from './Menu';
 import Sidebar from './Sidebar'
 import About from './About';
+import Dhikr from './Dhikr'
 import FatihaPage from './Pages/Fatiha/FatihaPage';
 
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'; 
@@ -20,6 +21,7 @@ function App() {
          <Route path="/"element={<><Sidebar/><Menu /></>}/>
          <Route path='/About' element={<><Sidebar /><About /> </>}/>
          <Route path='/Fatiha' element={<><Sidebar /><FatihaPage /> </>}/>
+         <Route path='/Dhikr' element={<><Sidebar /><Dhikr /> </>}/>
      
        </Routes>
       </BrowserRouter>

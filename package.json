@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@anatoliygatt/numeric-stepper": "^1.0.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^6.3.1",
     "react": "^18.0.0",
     "react-burger-menu": "^3.0.6",
     "react-dom": "^18.0.0",

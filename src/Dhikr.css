@@ -1,0 +1,32 @@
+.Counter {
+    position: relative;
+    top: 40vh;
+    left: 15%;
+}
+
+[data-testid='numeric-stepper-thumb'] {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 800;
+  }
+
+  h1 {
+    color: #ffc635;
+    font-size: 1rem;
+    position: relative;
+    width: 100%;
+    left: 2.5rem;
+    bottom: 21rem;
+
+    animation: animate 1s ease-in-out infinite alternate;
+}
+
+@keyframes animate {
+    from {
+        text-shadow: 0 0 20px #ffc635;
+    }
+    to {
+        text-shadow: 0 0 30px #ffc635, 
+        0 0 10px #ffc635;
+    }
+}

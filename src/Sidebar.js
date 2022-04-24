@@ -8,7 +8,7 @@ const Sidebar = () => {
         <Menu>
             <h2 className='menuTitle'>Ayahmatch</h2>
             <a href='/'>Home</a>
-            <a href='/'>Dhikr (TBA)</a>
+            <a href='/Dhikr'>Dhikr Counter</a>
             <a href='/'>Tahajjud (TBA)</a>
             <a href='/About'>About</a>
         </Menu>
