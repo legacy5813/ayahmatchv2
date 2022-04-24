@@ -16,7 +16,7 @@
 }
 
 .BtnHome {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.438);
   position: relative;
   text-align: center;
   font-size: 1rem;
