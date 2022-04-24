@@ -98,9 +98,8 @@ const FatihaPage = () => {
            mainCard ? //if it is true then main card views render otherwise they are hidden before hitting new game
        
        <div className="mainCARD" /*div for displaying two zoomed in choices on a seperately*/>
-           {/*<img className="mainBack1" src={choice1?.src? choice1.src: cover} />
-           <img className="mainBack2" src={choice2?.src? choice2.src: cover} /> */}
-
+           <img className="mainBack1" src={choice1?.src? choice1.src: cover} />
+           <img className="mainBack2" src={choice2?.src? choice2.src: cover} />
        </div>
        :null
        }
