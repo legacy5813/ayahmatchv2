@@ -3,6 +3,7 @@ import './App.css';
 import Menu from './Menu';
 import Sidebar from './Sidebar'
 import About from './About';
+import FatihaPage from './Pages/Fatiha/FatihaPage';
 
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'; 
 
@@ -18,6 +19,7 @@ function App() {
        <Routes /*Routes tag used to contain all the invididual route paths to the pages, route tag is each individual path defined*/ >
          <Route path="/"element={<><Sidebar/><Menu /></>}/>
          <Route path='/About' element={<><Sidebar /><About /> </>}/>
+         <Route path='/Fatiha' element={<><Sidebar /><FatihaPage /> </>}/>
      
        </Routes>
       </BrowserRouter>

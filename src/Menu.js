@@ -24,7 +24,7 @@ const Menu = () => {
     return (
         <div className="Slide">
             <Slider {...settings}>
-            <button className="BtnMenu">Al Fatiha (The Opening)</button>
+            <button className="BtnMenu" onClick={() => {navigate("/Fatiha")}}>Al Fatiha (The Opening)</button>
             <button className="BtnMenu">Al Fil (The Elephant)</button>
             <button className="BtnMenu">Quraish (People of Quraish)</button>
             <button className="BtnMenu">Al Maa'un (Almsgiving)</button> 

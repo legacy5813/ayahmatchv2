@@ -55,8 +55,8 @@
 
 .Slide{
     position: relative;
-    bottom: -7rem;
+    top: 20%;
     width: 100%;
-    right: 0.5em;
+    left: -1vw;
     
 }
