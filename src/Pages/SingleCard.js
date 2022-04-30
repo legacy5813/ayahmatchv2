@@ -12,10 +12,17 @@ const SingleCard = ({card, handleChoice, flipped, disabled}) => {
         
     }
 
+    const checkID = () => {
+        console.log(card.id)
+    }
+
     return (  
     <div className="card" /*div for card element for styling*/>
         <div className={flipped ? "flipped" : ""} /*sub div for front and back of each ayah card*/>
-            <img className="front" src={card.src} alt="card front error" /*each mapped ayah card image*/ /> 
+            <div className='front' onClick={checkID}>
+            <h2 className='front-ayah'>{card.ayah}</h2>
+            <h2 className='front-translit'>{card.translit}</h2> 
+            </div>
             <img 
             className="back" src={cover} 
             onClick={handleClick} 

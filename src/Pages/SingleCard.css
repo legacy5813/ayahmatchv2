@@ -22,6 +22,38 @@
     transform: rotateY(90deg);
     position: absolute;
     transition: all ease-in 0.2s;
+
+    background-color: white;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .front .front-ayah {
+       font-size: 0.4rem; 
+    }
+}
+    
+
+.front .front-ayah {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+.front .front-translit {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+    .front .front-translit {
+        font-size: 0.1rem;
+    }
 }
 
 .flipped .front {

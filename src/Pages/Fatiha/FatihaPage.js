@@ -5,19 +5,19 @@ import SingleCard from './../../Pages/SingleCard';
 import cover from './../../img/cover.jpg'
 
 const cardImages = [ //must use require due to webpack to properly locate path
-    {"src": require("./../../img/Fatiha-img/1.JPG"), id: 1, matched: false },
-    {"src": require("./../../img/Fatiha-img/2.JPG"), id: 2, matched: false },
-    {"src": require("./../../img/Fatiha-img/3.JPG"), id: 3, matched: false },
-    {"src": require("./../../img/Fatiha-img/4.JPG"), id: 4, matched: false },
-    {"src": require("./../../img/Fatiha-img/5.JPG"), id: 5, matched: false },
-    {"src": require("./../../img/Fatiha-img/6.JPG"), id: 6, matched: false },
-    {"src": require("./../../img/Fatiha-img/7.JPG"), id: 7, matched: false },
-    {"src": require("./../../img/Fatiha-img/8.JPG"), id: 8, matched: false },
-    {"src": require("./../../img/Fatiha-img/9.JPG"), id: 9, matched: false },
-    {"src": require("./../../img/Fatiha-img/10.JPG"), id: 10, matched: false },
-    {"src": require("./../../img/Fatiha-img/11.JPG"), id: 11, matched: false },
-    {"src": require("./../../img/Fatiha-img/12.JPG"), id: 12, matched: false },
-    {"src": require("./../../img/Fatiha-img/13.JPG"), id: 13, matched: false },
+    {ayah: "ٱلۡحَمۡدُ لِلَّهِ", translit: "All praises and thanks to Allah", id: 1, matched: false, matchID: 1 },
+    {ayah: "رَبِّ ٱلۡعَٰلَمِينَ", translit: "Lord of the universe", id: 2, matched: false, matchID: 2 },
+    {ayah: "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", translit: "The most Gracious the most Merciful", id: 3, matched: false, matchID: 3 },
+    {ayah: "مَٰلِكِ يَوۡمِ ٱلدِّينِ", translit: "Master of the day of judgement", id: 4, matched: false, matchID: 4 },
+    {ayah: "إِيَّاكَ نَعۡبُدُ", translit: "You alone we worship", id: 5, matched: false, matchID: 5 },
+    {ayah: "وَإِيَّاكَ نَسۡتَعِينُ", translit: "You alone we ask for help", id: 6, matched: false, matchID: 6 },
+    {ayah: "ٱهۡدِنَا ٱلصِّرَٰطَ", translit: "Guide us to the path", id: 7, matched: false, matchID: 7 },
+    {ayah: "ٱلۡمُسۡتَقِيمَ", translit: "The straight path", id: 8, matched: false, matchID: 8 },
+    {ayah: "صِرَٰطَ ٱلَّذِينَ", translit: "The path of those", id: 9, matched: false, matchID: 9 },
+    {ayah: "أَنۡعَمۡتَ عَلَيۡهِمۡ", translit: "You have bestowed favours", id: 10, matched: false, matchID: 10 },
+    {ayah: "غَيۡرِ ٱلۡمَغۡضُوبِ", translit: "Not those who earned your wrath", id: 11, matched: false, matchID: 11 },
+    {ayah: "عَلَيۡهِمۡ", translit: "On themselves", id: 12, matched: false, matchID: 12 },
+    {ayah: "وَلَا ٱلضَّآلِّينَ", translit: "And not those who go astray", id: 13, matched: false, matchID: 13 },
 ] //array for storing the ayah images 
 
 const FatihaPage = () => {
@@ -52,10 +52,10 @@ const FatihaPage = () => {
    useEffect(() => { //checking each time when two choices are made if the cards match
        if (choice1 && choice2) {
         SetDisabled(true)
-           if (choice1.src === choice2.src) {
+           if (choice1.matchID === choice2.matchID) {
                setCards(prevCards => { //updating useState of new set of cards with the matched cards property to matched 
                    return prevCards.map(card => { //same card but with correctly chosen cards matched proeprty to true
-                       if (card.src === choice1.src) {
+                       if (card.matchID === choice1.matchID) {
                            return {...card, matched: true}
                        } else { return card}
                    })
@@ -98,8 +98,14 @@ const FatihaPage = () => {
            mainCard ? //if it is true then main card views render otherwise they are hidden before hitting new game
        
        <div className="mainCARD" /*div for displaying two zoomed in choices on a seperately*/>
-           <img className="mainBack1" src={choice1?.src? choice1.src: cover} />
-           <img className="mainBack2" src={choice2?.src? choice2.src: cover} />
+           <div className="mainBack1">
+               <h2 className="main-Ayah">{choice1?.id? choice1.ayah: "1st Choice"}</h2>
+               <h2 className="main-Translit">{choice1?.id? choice1.translit: ""}</h2>
+           </div>
+           <div className="mainBack2">
+               <h2 className="main-Ayah">{choice2?.id? choice2.ayah: "2nd Choice"}</h2>
+               <h2 className="main-Translit">{choice2?.id? choice2.translit: ""}</h2>
+           </div>
        </div>
        :null
        }
