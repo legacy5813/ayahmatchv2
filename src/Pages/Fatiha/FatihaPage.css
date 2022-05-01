@@ -14,6 +14,13 @@
     top: 25vh;
 }
 
+@media (max-width: 920px) {
+    .mainCARD{
+        left: 25%;
+        top: 45vh;
+    }
+}
+
 .mainCARD img {
     display: block;
     border: 2px solid;
@@ -37,6 +44,13 @@
     text-align: center;
 }
 
+@media (max-width: 920px) {
+    .mainBack1 {
+        width: 80vw;
+        height: 15vh;
+    }
+}
+
 
 .mainBack2 {
     transition: all ease-in 0.2s;
@@ -50,6 +64,13 @@
     height: 30vh;
 
     text-align: center;
+}
+
+@media (max-width: 920px) {
+    .mainBack2 {
+        width: 80vw;
+        height: 15vh;
+    }
 }
 
 .mainCARD .main-Ayah {
@@ -66,7 +87,7 @@
     top: 70%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
     .mainCARD .main-Ayah{
         font-size: 1rem;
     }
