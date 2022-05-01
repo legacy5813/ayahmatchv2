@@ -40,9 +40,7 @@
 }
 
 .BtnMenu:hover {
-    transform: translate(-1px, -1px);
     background-color: #fffefd;
-    height: 15rem;
 }
 
 .BtnMenu:hover::after {
