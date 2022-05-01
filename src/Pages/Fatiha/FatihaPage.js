@@ -4,21 +4,37 @@ import './../../Pages/Fatiha/FatihaPage.css';
 import SingleCard from './../../Pages/SingleCard';
 import cover from './../../img/cover.jpg'
 
-const cardImages = [ //must use require due to webpack to properly locate path
-    {ayah: "ٱلۡحَمۡدُ لِلَّهِ", translit: "All praises and thanks to Allah", id: 1, matched: false, matchID: 1 },
-    {ayah: "رَبِّ ٱلۡعَٰلَمِينَ", translit: "Lord of the universe", id: 2, matched: false, matchID: 2 },
-    {ayah: "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", translit: "The most Gracious the most Merciful", id: 3, matched: false, matchID: 3 },
-    {ayah: "مَٰلِكِ يَوۡمِ ٱلدِّينِ", translit: "Master of the day of judgement", id: 4, matched: false, matchID: 4 },
-    {ayah: "إِيَّاكَ نَعۡبُدُ", translit: "You alone we worship", id: 5, matched: false, matchID: 5 },
-    {ayah: "وَإِيَّاكَ نَسۡتَعِينُ", translit: "You alone we ask for help", id: 6, matched: false, matchID: 6 },
-    {ayah: "ٱهۡدِنَا ٱلصِّرَٰطَ", translit: "Guide us to the path", id: 7, matched: false, matchID: 7 },
-    {ayah: "ٱلۡمُسۡتَقِيمَ", translit: "The straight path", id: 8, matched: false, matchID: 8 },
-    {ayah: "صِرَٰطَ ٱلَّذِينَ", translit: "The path of those", id: 9, matched: false, matchID: 9 },
-    {ayah: "أَنۡعَمۡتَ عَلَيۡهِمۡ", translit: "You have bestowed favours", id: 10, matched: false, matchID: 10 },
-    {ayah: "غَيۡرِ ٱلۡمَغۡضُوبِ", translit: "Not those who earned your wrath", id: 11, matched: false, matchID: 11 },
-    {ayah: "عَلَيۡهِمۡ", translit: "On themselves", id: 12, matched: false, matchID: 12 },
-    {ayah: "وَلَا ٱلضَّآلِّينَ", translit: "And not those who go astray", id: 13, matched: false, matchID: 13 },
-] //array for storing the ayah images 
+const cardArabic = [ //must use require due to webpack to properly locate path
+    {ayah: "ٱلۡحَمۡدُ لِلَّهِ", translit: "lilahi al-hamdu", id: 1, matched: false, matchID: 1 },
+    {ayah: "رَبِّ ٱلۡعَٰلَمِينَ", translit: "al-'alamina rabbi", id: 2, matched: false, matchID: 2 },
+    {ayah: "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", translit: "ar-rahim ar-rahmani", id: 3, matched: false, matchID: 3 },
+    {ayah: "مَٰلِكِ يَوۡمِ ٱلدِّينِ", translit: "al-dini yawmi maliki", id: 4, matched: false, matchID: 4 },
+    {ayah: "إِيَّاكَ نَعۡبُدُ", translit: "na'budu iyyaka", id: 5, matched: false, matchID: 5 },
+    {ayah: "وَإِيَّاكَ نَسۡتَعِينُ", translit: "nasta'inu wa-iyyaka", id: 6, matched: false, matchID: 6 },
+    {ayah: "ٱهۡدِنَا ٱلصِّرَٰطَ", translit: "al-sirata ih'dina", id: 7, matched: false, matchID: 7 },
+    {ayah: "ٱلۡمُسۡتَقِيمَ", translit: "al-mus'taqima", id: 8, matched: false, matchID: 8 },
+    {ayah: "صِرَٰطَ ٱلَّذِينَ", translit: "alladhina sirata", id: 9, matched: false, matchID: 9 },
+    {ayah: "أَنۡعَمۡتَ عَلَيۡهِمۡ", translit: "alayhim an'amta", id: 10, matched: false, matchID: 10 },
+    {ayah: "غَيۡرِ ٱلۡمَغۡضُوبِ", translit: "al-maghdubi ghayri", id: 11, matched: false, matchID: 11 },
+    {ayah: "عَلَيۡهِمۡ", translit: "alayhim", id: 12, matched: false, matchID: 12 },
+    {ayah: "وَلَا ٱلضَّآلِّينَ", translit: "al-dalina wala", id: 13, matched: false, matchID: 13 },
+] //array for storing the ayahs in arabic 
+
+const cardEnglish = [ //must use require due to webpack to properly locate path
+    {ayah: "All praises and thanks to Allah", translit: "", id: 1, matched: false, matchID: 1 },
+    {ayah: "Lord of the universe", translit: "", id: 2, matched: false, matchID: 2 },
+    {ayah: "The most Gracious the most Merciful", translit: "", id: 3, matched: false, matchID: 3 },
+    {ayah: "Master of the day of judgement", translit: "", id: 4, matched: false, matchID: 4 },
+    {ayah: "You alone we worship", translit: "", id: 5, matched: false, matchID: 5 },
+    {ayah: "You alone we ask for help", translit: "", id: 6, matched: false, matchID: 6 },
+    {ayah: "Guide us to the path", translit: "", id: 7, matched: false, matchID: 7 },
+    {ayah: "The straight path", translit: "", id: 8, matched: false, matchID: 8 },
+    {ayah: "The path of those", translit: "", id: 9, matched: false, matchID: 9 },
+    {ayah: "You have bestowed favours", translit: "", id: 10, matched: false, matchID: 10 },
+    {ayah: "Not those who earned your wrath", translit: "", id: 11, matched: false, matchID: 11 },
+    {ayah: "On themselves", translit: "", id: 12, matched: false, matchID: 12 },
+    {ayah: "And not those who go astray", translit: "", id: 13, matched: false, matchID: 13 },
+] //array for storing the ayahs in english
 
 const FatihaPage = () => {
     const [cards, setCards] = useState([]) //useState hook empty array for updating later on
@@ -33,7 +49,7 @@ const FatihaPage = () => {
 
     //shuffle cards
     const shuffleCards = () => {
-        const shuffledCards = [...cardImages, ...cardImages] //the array of cards to be shuffled
+        const shuffledCards = [...cardArabic, ...cardEnglish] //the array of cards to be shuffled
         .sort(() => Math.random() - 0.5) //randomly sorting the array to mix the card orders
         .map((card) => ({...card, id:Math.random()})) //for each card in array is mapped to a new array for the shuffled array
 
@@ -62,7 +78,7 @@ const FatihaPage = () => {
                })
                resetTurn()
            } else {
-            setTimeout(() => resetTurn(), 1000)
+            setTimeout(() => resetTurn(), 3000)
         }
        }
 
