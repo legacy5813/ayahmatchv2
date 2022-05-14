@@ -95,3 +95,24 @@
         font-size: 0.5rem;
     }
 }
+
+.score {
+    font-size: 4rem;
+    color: #ffc635;
+    position: relative;
+    right: 120%;
+    bottom: 2rem;
+}
+
+@media (max-width: 920px){
+    .score {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 50%;
+        bottom: 170%;
+        width: 8rem;
+        
+
+    }
+}
+

@@ -122,9 +122,12 @@ const FatihaPage = () => {
                <h2 className="main-Ayah">{choice2?.id? choice2.ayah: "2nd Choice"}</h2>
                <h2 className="main-Translit">{choice2?.id? choice2.translit: ""}</h2>
            </div>
+           <h2 className="score">Turns: {turns} </h2>
        </div>
        :null
        }
+
+ 
 
        </div>
       );
