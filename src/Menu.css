@@ -55,6 +55,15 @@
     position: relative;
     top: 10%;
     width: 100%;
-    left: -1vw;
+    left: 5vw;
     
+}
+
+@media (max-width: 720px) {
+    .Slide{
+        position: relative;
+        top: 7%;
+        left: 0%;
+
+    }
 }

@@ -16,7 +16,7 @@
 
 @media (max-width: 920px) {
     .mainCARD{
-        left: 25%;
+        left: 15%;
         top: 45vh;
     }
 }
@@ -48,6 +48,7 @@
     .mainBack1 {
         width: 80vw;
         height: 15vh;
+        right: 7%;
     }
 }
 
@@ -70,6 +71,7 @@
     .mainBack2 {
         width: 80vw;
         height: 15vh;
+        right: 7%;
     }
 }
 

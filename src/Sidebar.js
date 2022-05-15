@@ -10,7 +10,6 @@ const Sidebar = () => {
             <a href='/'>Home</a>
             <a href='/Dhikr'>Dhikr Counter</a>
             <a href='/'>Duas (TBA)</a>
-            <a href='/'>Quran Miracles</a>
             <a href='/'>Tahajjud (TBA)</a>
             <a href='/About'>About</a>
         </Menu>
