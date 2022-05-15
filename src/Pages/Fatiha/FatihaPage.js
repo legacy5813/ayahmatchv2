@@ -2,38 +2,71 @@ import React from "react";
 import { useEffect, useState } from "react";
 import './../../Pages/Fatiha/FatihaPage.css';
 import SingleCard from './../../Pages/SingleCard';
-import cover from './../../img/cover.jpg'
+import cover from './../../img/cover.jpg';
+import Alert from 'react-bootstrap/Alert';
+
+const clueEnglish = [
+    {clue: "All praises and thanks to Allah"},
+    {clue: "Lord of the universe"},
+    {clue: "The most Gracious the most Merciful"},
+    {clue: "Master of the day of judgement"},
+    {clue: "You alone we worship"},
+    {clue: "You alone we ask for help"},
+    {clue: "Guide us to the path"},
+    {clue: "The straight path"},
+    {clue: "The path of those"},
+    {clue: "You have bestowed favours"},
+    {clue: "Not those who earned your wrath"},
+    {clue: "On themselves"},
+    {clue: "And not those who go astray"}
+]
+
+const clueArabic = [
+    {clue: "lilahi al-hamdu"},
+    {clue: "al-'alamina rabbi"},
+    {clue: "ar-rahim ar-rahmani"},
+    {clue: "al-dini yawmi maliki"},
+    {clue: "na'budu iyyaka"},
+    {clue: "nasta'inu wa-iyyaka"},
+    {clue: "al-sirata ih'dina"},
+    {clue: "al-mus'taqima"},
+    {clue: "alladhina sirata"},
+    {clue: "alayhim an'amta"},
+    {clue: "al-maghdubi ghayri"},
+    {clue: "alayhim"},
+    {clue: "al-dalina wala"},
+]
 
 const cardArabic = [ //must use require due to webpack to properly locate path
-    {ayah: "ٱلۡحَمۡدُ لِلَّهِ", translit: "lilahi al-hamdu", id: 1, matched: false, matchID: 1 },
-    {ayah: "رَبِّ ٱلۡعَٰلَمِينَ", translit: "al-'alamina rabbi", id: 2, matched: false, matchID: 2 },
-    {ayah: "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", translit: "ar-rahim ar-rahmani", id: 3, matched: false, matchID: 3 },
-    {ayah: "مَٰلِكِ يَوۡمِ ٱلدِّينِ", translit: "al-dini yawmi maliki", id: 4, matched: false, matchID: 4 },
-    {ayah: "إِيَّاكَ نَعۡبُدُ", translit: "na'budu iyyaka", id: 5, matched: false, matchID: 5 },
-    {ayah: "وَإِيَّاكَ نَسۡتَعِينُ", translit: "nasta'inu wa-iyyaka", id: 6, matched: false, matchID: 6 },
-    {ayah: "ٱهۡدِنَا ٱلصِّرَٰطَ", translit: "al-sirata ih'dina", id: 7, matched: false, matchID: 7 },
-    {ayah: "ٱلۡمُسۡتَقِيمَ", translit: "al-mus'taqima", id: 8, matched: false, matchID: 8 },
-    {ayah: "صِرَٰطَ ٱلَّذِينَ", translit: "alladhina sirata", id: 9, matched: false, matchID: 9 },
-    {ayah: "أَنۡعَمۡتَ عَلَيۡهِمۡ", translit: "alayhim an'amta", id: 10, matched: false, matchID: 10 },
-    {ayah: "غَيۡرِ ٱلۡمَغۡضُوبِ", translit: "al-maghdubi ghayri", id: 11, matched: false, matchID: 11 },
-    {ayah: "عَلَيۡهِمۡ", translit: "alayhim", id: 12, matched: false, matchID: 12 },
-    {ayah: "وَلَا ٱلضَّآلِّينَ", translit: "al-dalina wala", id: 13, matched: false, matchID: 13 },
+    {ayah: "ٱلۡحَمۡدُ لِلَّهِ", translit: "lilahi al-hamdu", id: 1, matched: false, matchID: 1, clue: clueEnglish[0].clue},
+    {ayah: "رَبِّ ٱلۡعَٰلَمِينَ", translit: "al-'alamina rabbi", id: 2, matched: false, matchID: 2, clue: clueEnglish[1].clue },
+    {ayah: "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ", translit: "ar-rahim ar-rahmani", id: 3, matched: false, matchID: 3, clue: clueEnglish[2].clue },
+    {ayah: "مَٰلِكِ يَوۡمِ ٱلدِّينِ", translit: "al-dini yawmi maliki", id: 4, matched: false, matchID: 4, clue: clueEnglish[3].clue },
+    {ayah: "إِيَّاكَ نَعۡبُدُ", translit: "na'budu iyyaka", id: 5, matched: false, matchID: 5, clue: clueEnglish[4].clue },
+    {ayah: "وَإِيَّاكَ نَسۡتَعِينُ", translit: "nasta'inu wa-iyyaka", id: 6, matched: false, matchID: 6, clue: clueEnglish[5].clue },
+    {ayah: "ٱهۡدِنَا ٱلصِّرَٰطَ", translit: "al-sirata ih'dina", id: 7, matched: false, matchID: 7, clue: clueEnglish[6].clue },
+    {ayah: "ٱلۡمُسۡتَقِيمَ", translit: "al-mus'taqima", id: 8, matched: false, matchID: 8, clue: clueEnglish[7].clue },
+    {ayah: "صِرَٰطَ ٱلَّذِينَ", translit: "alladhina sirata", id: 9, matched: false, matchID: 9, clue: clueEnglish[8].clue },
+    {ayah: "أَنۡعَمۡتَ عَلَيۡهِمۡ", translit: "alayhim an'amta", id: 10, matched: false, matchID: 10, clue: clueEnglish[9].clue },
+    {ayah: "غَيۡرِ ٱلۡمَغۡضُوبِ", translit: "al-maghdubi ghayri", id: 11, matched: false, matchID: 11, clue: clueEnglish[10].clue },
+    {ayah: "عَلَيۡهِمۡ", translit: "alayhim", id: 12, matched: false, matchID: 12, clue: clueEnglish[11].clue },
+    {ayah: "وَلَا ٱلضَّآلِّينَ", translit: "al-dalina wala", id: 13, matched: false, matchID: 13, clue: clueEnglish[12].clue },
 ] //array for storing the ayahs in arabic 
 
 const cardEnglish = [ //must use require due to webpack to properly locate path
-    {ayah: "All praises and thanks to Allah", translit: "", id: 1, matched: false, matchID: 1 },
-    {ayah: "Lord of the universe", translit: "", id: 2, matched: false, matchID: 2 },
-    {ayah: "The most Gracious the most Merciful", translit: "", id: 3, matched: false, matchID: 3 },
-    {ayah: "Master of the day of judgement", translit: "", id: 4, matched: false, matchID: 4 },
-    {ayah: "You alone we worship", translit: "", id: 5, matched: false, matchID: 5 },
-    {ayah: "You alone we ask for help", translit: "", id: 6, matched: false, matchID: 6 },
-    {ayah: "Guide us to the path", translit: "", id: 7, matched: false, matchID: 7 },
-    {ayah: "The straight path", translit: "", id: 8, matched: false, matchID: 8 },
-    {ayah: "The path of those", translit: "", id: 9, matched: false, matchID: 9 },
-    {ayah: "You have bestowed favours", translit: "", id: 10, matched: false, matchID: 10 },
-    {ayah: "Not those who earned your wrath", translit: "", id: 11, matched: false, matchID: 11 },
-    {ayah: "On themselves", translit: "", id: 12, matched: false, matchID: 12 },
-    {ayah: "And not those who go astray", translit: "", id: 13, matched: false, matchID: 13 },
+    {ayah: "All praises and thanks to Allah", translit: "", id: 1, matched: false, matchID: 1, clue: clueArabic[0].clue },
+    {ayah: "Lord of the universe", translit: "", id: 2, matched: false, matchID: 2, clue: clueArabic[1].clue },
+    {ayah: "The most Gracious the most Merciful", translit: "", id: 3, matched: false, matchID: 3, clue: clueArabic[2].clue },
+    {ayah: "Master of the day of judgement", translit: "", id: 4, matched: false, matchID: 4, clue: clueArabic[3].clue },
+    {ayah: "You alone we worship", translit: "", id: 5, matched: false, matchID: 5, clue: clueArabic[4].clue },
+    {ayah: "You alone we ask for help", translit: "", id: 6, matched: false, matchID: 6, clue: clueArabic[5].clue },
+    {ayah: "Guide us to the path", translit: "", id: 7, matched: false, matchID: 7, clue: clueArabic[6].clue },
+    {ayah: "The straight path", translit: "", id: 8, matched: false, matchID: 8, clue: clueArabic[7].clue },
+    {ayah: "The path of those", translit: "", id: 9, matched: false, matchID: 9, clue: clueArabic[8].clue },
+    {ayah: "You have bestowed favours", translit: "", id: 10, matched: false, matchID: 10, clue: clueArabic[9].clue },
+    {ayah: "Not those who earned your wrath", translit: "", id: 11, matched: false, matchID: 11, clue: clueArabic[10].clue },
+    {ayah: "On themselves", translit: "", id: 12, matched: false, matchID: 12, clue: clueArabic[11].clue },
+    {ayah: "And not those who go astray", translit: "", id: 13, matched: false, matchID: 13, clue: clueArabic[12].clue },
 ] //array for storing the ayahs in english
 
 const FatihaPage = () => {
@@ -66,6 +99,11 @@ const FatihaPage = () => {
    }
    //compare 2 selected cards
    useEffect(() => { //checking each time when two choices are made if the cards match
+    if (choice1 && !choice2) {
+        setAlert(true)
+        setTimeout(() => setAlert(false), 2000)
+
+    }
        if (choice1 && choice2) {
         SetDisabled(true)
            if (choice1.matchID === choice2.matchID) {
@@ -93,6 +131,7 @@ const FatihaPage = () => {
    }
 
    const [mainCard, setmainCard] = useState(false) //useState for rendering the mainCard views conditionally
+   const [alert, setAlert] = useState(false) //useState for rendering alerts on card choices/statuses
 
     return (
         <div>
@@ -126,6 +165,13 @@ const FatihaPage = () => {
        </div>
        :null
        }
+
+       {
+       
+           alert ? 
+           <Alert variant="warning" className="Alert">Clue: {choice1.clue}</Alert>
+           :null
+        }
 
  
 

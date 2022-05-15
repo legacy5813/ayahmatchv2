@@ -118,3 +118,22 @@
     }
 }
 
+.Alert {
+    background-color: #ffc635 !important;
+    color: black !important;
+    font-weight: bold;
+    position: relative;
+    width: 30%;
+    top: -60vh;
+    left: 59%;
+}
+
+@media (max-width: 920px){
+    .Alert{
+        position: relative;
+        width: 80%;
+        top: 50vh;
+        left: 10%;
+
+    }
+}
