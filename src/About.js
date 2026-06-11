@@ -9,7 +9,6 @@ const About = () => {
                 translation against the arabic phrases to improve the understanding of Quranic Surahs.
                 This application is under continuous development
              </p>
-
              <p className='Para'>
                 Github Repo for bug reports: https://github.com/xZifhuba/ayahmatch
              </p>
@@ -17,19 +16,11 @@ const About = () => {
                 Dev team (Github Profiles):
              </p>
              <p className='Para'>
-                xZifhuba
+                Mahfuza
              </p>
              <p className='Para'>
-                bbuthow
+                Legacy5813
              </p>
-             <p className='Para'>
-                piekarczykw
-             </p>
-             <p className='Para'></p>
-             <p className='Para'></p>
-             <p className='Para'></p>
-             <p className='Para'></p>
-    
              <p className='Para'>
                 إِنَّا ِلِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ
              </p>
